@@ -18,7 +18,7 @@ public class Player {
         this.down = false;
         this.left = false;
         this.right = false;
-        this.movementSpeed = 1;
+        this.movementSpeed = 5;
     }
 
     public void setPos(int x, int y) {
