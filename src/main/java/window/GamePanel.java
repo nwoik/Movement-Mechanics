@@ -31,7 +31,6 @@ public class GamePanel extends JPanel {
 
         g.setColor(Color.GREEN);
         g.drawString(callFPS(), 10, 10);
-        repaint();
     }
 
     public String callFPS() {

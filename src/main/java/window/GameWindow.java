@@ -9,6 +9,7 @@ public class GameWindow extends JFrame {
     public int HEIGHT = dimension.height;
     public int WIDTH = dimension.width;
 
+
     public GameWindow(GamePanel gamePanel) {
         this.add(gamePanel);
         this.setSize(WIDTH, HEIGHT);
@@ -17,5 +18,4 @@ public class GameWindow extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
     }
-
 }
