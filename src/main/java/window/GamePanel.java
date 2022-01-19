@@ -27,10 +27,10 @@ public class GamePanel extends JPanel {
 
         g.setColor(Color.BLUE);
         g.fillRect(player.x, player.y, player.width, player.height);
+        player.borderPatrol();
 
         g.setColor(Color.GREEN);
         g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-//        rectangle.collide(player);
 
         player.move(player.movementSpeed);
 
