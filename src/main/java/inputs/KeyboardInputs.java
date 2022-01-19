@@ -10,7 +10,7 @@ public class KeyboardInputs implements KeyListener{
     private final Player player;
 
     public KeyboardInputs(GamePanel gamePanel) {
-        this.player = gamePanel.square;
+        this.player = gamePanel.player;
     }
 
     @Override

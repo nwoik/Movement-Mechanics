@@ -40,9 +40,8 @@ public class MouseInputs implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseDragged(MouseEvent e) {
-        System.out.println("Mouse dragged at " + e.getPoint());
-        if (this.gamePanel.square.contains(e.getX(), e.getY())) {
-            this.gamePanel.square.setPos(e.getX()-this.gamePanel.square.length/2, e.getY()-this.gamePanel.square.length/2); // centers the shape being dragged
+        if (this.gamePanel.player.contains(e.getX(), e.getY())) {
+            this.gamePanel.player.setPos(e.getX()-this.gamePanel.player.width/2, e.getY()-this.gamePanel.player.height/2); // centers the shape being dragged
         }
     }
 

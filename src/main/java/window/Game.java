@@ -2,10 +2,10 @@ package window;
 
 public class Game {
     private GameWindow gameWindow;
-    private GamePanel gamePanel;
-    private double FPS = 60.0;
+    private final GamePanel gamePanel;
+    private final double FPS = 60.0;
     private double lastFrameTime;
-    private double frameDuration = 1000000000.0/FPS;
+    private final double frameDuration = 1000000000.0/FPS;
 
     public Game() {
         gamePanel = new GamePanel();

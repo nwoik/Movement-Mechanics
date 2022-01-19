@@ -11,7 +11,8 @@ import java.awt.*;
 public class GamePanel extends JPanel {
     public int frames;
     private long lastTime;
-    public Player square = new Player(300, 300, 100);
+    public Player player = new Player(300, 300, 100, 100);
+    public objects.Rectangle rectangle = new objects.Rectangle(700, 700, 100, 100);
     private String outputFPS = "";
 
     public GamePanel() {
@@ -25,9 +26,13 @@ public class GamePanel extends JPanel {
         super.paintComponent(g);
 
         g.setColor(Color.BLUE);
-        g.fillRect(square.x, square.y, square.length, square.length);
+        g.fillRect(player.x, player.y, player.width, player.height);
 
-        square.move(square.movementSpeed);
+        g.setColor(Color.GREEN);
+        g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        rectangle.collide(player);
+
+        player.move(player.movementSpeed);
 
         g.setColor(Color.GREEN);
         g.drawString(callFPS(), 10, 10);
