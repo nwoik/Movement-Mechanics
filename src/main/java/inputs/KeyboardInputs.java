@@ -1,6 +1,6 @@
 package inputs;
 
-import player.Player;
+import objects.Player;
 import window.GamePanel;
 
 import java.awt.event.KeyEvent;

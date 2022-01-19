@@ -1,7 +1,5 @@
-package player;
+package objects;
 
-
-import java.awt.event.*;
 
 public class Player {
     public int x;

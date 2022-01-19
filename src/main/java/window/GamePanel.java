@@ -2,7 +2,7 @@ package window;
 
 import inputs.KeyboardInputs;
 import inputs.MouseInputs;
-import player.Player;
+import objects.Player;
 
 import javax.swing.JPanel;
 import java.awt.*;
@@ -42,4 +42,6 @@ public class GamePanel extends JPanel {
         }
         return outputFPS;
     }
+
+
 }
