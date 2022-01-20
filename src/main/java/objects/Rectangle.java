@@ -2,6 +2,8 @@ package objects;
 
 import window.GamePanel;
 
+import java.awt.*;
+
 public class Rectangle extends Entity {
     public Rectangle(int x, int y, int width, int height, int movementSpeed) {
         super(x, y, width, height, movementSpeed);
@@ -11,6 +13,12 @@ public class Rectangle extends Entity {
         this.height = height;
         this.movementSpeed = movementSpeed;
 
+    }
+
+    @Override
+    public void render(Graphics g) {
+        g.setColor(Color.GREEN);
+        g.fillRect(this.x, this.y, this.width, this.height);
     }
 
     @Override

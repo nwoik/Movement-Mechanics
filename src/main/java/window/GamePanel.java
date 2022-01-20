@@ -2,6 +2,7 @@ package window;
 
 import inputs.KeyboardInputs;
 import inputs.MouseInputs;
+import objects.Handler;
 import objects.Player;
 
 import javax.swing.JPanel;
@@ -11,28 +12,25 @@ import java.awt.*;
 public class GamePanel extends JPanel {
     public int frames;
     private long lastTime;
-    public Player player = new Player(300, 300, 100, 100, 15);
-    public objects.Rectangle rectangle = new objects.Rectangle(700, 700, 100, 100, 15);
     private String outputFPS = "";
+    public Handler handler;
+    public Player player = new Player(100, 100, 100, 100, 15);
 
     public GamePanel() {
         MouseInputs mouseInputs = new MouseInputs(this);
         addKeyListener(new KeyboardInputs(this));
         addMouseListener(mouseInputs);
         addMouseMotionListener(mouseInputs);
+        handler = new Handler();
+        handler.addEntity(player);
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.setColor(Color.BLUE);
-        g.fillRect(player.x, player.y, player.width, player.height);
-        player.borderPatrol();
-
-        g.setColor(Color.GREEN);
-        g.fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-
-        player.move();
+        handler.render(g);
+        handler.borderPatrol();
+        handler.move();
 
         g.setColor(Color.GREEN);
         g.drawString(callFPS(), 10, 10);
@@ -47,6 +45,4 @@ public class GamePanel extends JPanel {
         }
         return outputFPS;
     }
-
-
 }

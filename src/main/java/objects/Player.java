@@ -32,6 +32,12 @@ public class Player extends Entity {
     }
 
     @Override
+    public void render(Graphics g) {
+        g.setColor(Color.BLUE);
+        g.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    @Override
     public void move() {
         if (this.right) {
             addX(this.movementSpeed);

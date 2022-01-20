@@ -14,6 +14,7 @@ public class GameWindow extends JFrame {
         this.setSize(WIDTH, HEIGHT);
         this.setResizable(true);
         this.add(gamePanel);
+        setUndecorated(true);
         setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
