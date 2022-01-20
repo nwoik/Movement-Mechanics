@@ -11,7 +11,7 @@ public class GameWindow extends JFrame {
 
 
     public GameWindow(GamePanel gamePanel) {
-        this.setSize(500, 500);
+        this.setSize(WIDTH, HEIGHT);
         this.setResizable(true);
         this.add(gamePanel);
         setLocationRelativeTo(null);

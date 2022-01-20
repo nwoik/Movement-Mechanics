@@ -18,8 +18,8 @@ public class Player extends Entity {
     public boolean up, down, left, right;
     public int movementSpeed;
 
-    public Player(int x, int y, int width, int height) {
-        super(x, y, width, height);
+    public Player(int x, int y, int width, int height, int movementSpeed) {
+        super(x, y, width, height, movementSpeed);
         this.x = x;
         this.y = y;
         this.width = width;
@@ -28,52 +28,60 @@ public class Player extends Entity {
         this.down = false;
         this.left = false;
         this.right = false;
-        this.movementSpeed = 5;
+        this.movementSpeed = movementSpeed;
     }
 
-    public void move(int value) {
+    @Override
+    public void move() {
         if (this.right) {
-            addX(value);
+            addX(this.movementSpeed);
         }
 
         if (this.left) {
-            subX(value);
+            subX(this.movementSpeed);
         }
 
         if (this.down) {
-            addY(value);
+            addY(this.movementSpeed);
         }
 
         if (this.up) {
-            subY(value);
+            subY(this.movementSpeed);
         }
     }
 
+    @Override
     public void setPos(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    @Override
     public void addX(int value) {
         this.x += value;
     }
 
+    @Override
     public void subX(int value) {
         this.x -= value;
     }
 
+    @Override
     public void addY(int value) {
         this.y += value;
     }
 
+    @Override
     public void subY(int value) {
         this.y -= value;
     }
 
+    @Override
     public boolean contains(int x, int y) {
         return this.x < x && x < this.x + this.width && this.y < y && y < this.y + this.height;
     }
 
+    @Override
     public void borderPatrol() {
         if (this.x <= 0) {
             this.left = false;

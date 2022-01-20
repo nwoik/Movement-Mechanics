@@ -3,7 +3,7 @@ package objects;
 
 import java.awt.*;
 
-public class Entity {
+public abstract class Entity {
     private final Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
     public int HEIGHT = dimension.height;
     public int WIDTH = dimension.width;
@@ -12,9 +12,10 @@ public class Entity {
     public int width;
     public int height;
     public boolean up, down, left, right;
+    public int movementSpeed;
 
 
-    public Entity(int x, int y, int width, int height) {
+    public Entity(int x, int y, int width, int height, int movementSpeed) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -23,50 +24,24 @@ public class Entity {
         this.down = false;
         this.left = false;
         this.right = false;
+        this.movementSpeed = movementSpeed;
     }
 
-    public void setPos(int x, int y) {
-        System.out.println(x + ", " + y);
-        this.x = x;
-        this.y = y;
-    }
+//    public abstract void render(Graphics g);
+//    public abstract Rectangle getBounds();
+    public abstract void move();
 
-    public void addX(int value) {
-        this.x += value;
-    }
+    public abstract void setPos(int x, int y);
 
-    public void subX(int value) {
-        this.x -= value;
-    }
+    public abstract void addX(int value);
 
-    public void addY(int value) {
-        this.y += value;
-    }
+    public abstract void subX(int value);
 
-    public void subY(int value) {
-        this.y -= value;
-    }
+    public abstract void addY(int value);
 
-    public boolean contains(int x, int y) {
-        return this.x < x && x < this.x + this.width && this.y < y && y < this.y + this.height;
-    }
+    public abstract void subY(int value);
 
-    public void borderPatrol() {
-        if (this.x <= 0) {
-            this.left = false;
-            this.x = 0;
-        }
-        if (this.x + this.width >= WIDTH) {
-            this.right = false;
-            this.x = WIDTH - this.width;
-        }
-        if (this.y <= 0) {
-            this.up = false;
-            this.y = 0;
-        }
-        if (this.y + this.height >= HEIGHT) {
-            this.down = false;
-            this.y = HEIGHT - this.height;
-        }
-    }
+    public abstract boolean contains(int x, int y);
+
+    public abstract void borderPatrol();
 }
