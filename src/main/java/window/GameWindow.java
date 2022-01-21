@@ -15,12 +15,18 @@ public class GameWindow extends JFrame{
 
     public GameWindow(GamePanel gamePanel) {
 
-        this.setSize(WIDTH, HEIGHT);
-        this.setResizable(true);
+        this.setTitle("Game");
         this.add(gamePanel);
-        setUndecorated(true);
+        this.pack();
+//        setUndecorated(true);
         setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    public void TitleWindow() {
+
+        //Title Name
+
     }
 }
