@@ -7,16 +7,19 @@ import objects.Player;
 
 import javax.swing.JPanel;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 
 public class GamePanel extends JPanel {
+    public BufferedImage img;
     public int frames;
     private long lastTime;
     private String outputFPS = "";
     public Handler handler;
     public Player player = new Player(100, 100, 100, 100, 15);
 
-    public GamePanel() {
+    public GamePanel(BufferedImage img) {
+        this.img = img;
         MouseInputs mouseInputs = new MouseInputs(this);
         addKeyListener(new KeyboardInputs(this));
         addMouseListener(mouseInputs);
@@ -27,6 +30,7 @@ public class GamePanel extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+//        g.drawImage(this.img.getSubimage(0,0,16,16), 0, 0, 100, 100,  null);
 
         handler.render(g);
         handler.borderPatrol();
