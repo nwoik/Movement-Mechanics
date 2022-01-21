@@ -11,8 +11,6 @@ public class Game implements Runnable{
     private final GamePanel gamePanel;
     private final double FPS = 60.0;
     private double lastFrameTime;
-    private final double frameDuration = 1000000000.0/FPS;
-    private Thread gameThread;
     BufferedImage img;
 
 
@@ -25,6 +23,7 @@ public class Game implements Runnable{
 
     public void loop() {
         while (true) {
+            double frameDuration = 1000000000.0 / FPS;
             if (System.nanoTime() - lastFrameTime >= frameDuration) {
                 lastFrameTime = System.nanoTime(); // reassign the value for last frame
                 gamePanel.repaint();
@@ -33,7 +32,7 @@ public class Game implements Runnable{
     }
 
     public void start() {
-        gameThread = new Thread(this);
+        Thread gameThread = new Thread(this);
         gameThread.start();
     }
 
@@ -51,8 +50,6 @@ public class Game implements Runnable{
             e.printStackTrace();
         }
     }
-
-
 
     @Override
     public void run() {
