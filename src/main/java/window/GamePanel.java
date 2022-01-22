@@ -35,6 +35,7 @@ public class GamePanel extends JPanel {
     public int gameState;
     public final int titleState = 0;
     public final int playState = 1;
+    public final int settingsState = 2;
 
 
     public GamePanel(BufferedImage img) {
@@ -45,8 +46,11 @@ public class GamePanel extends JPanel {
         addKeyListener(new KeyboardInputs(this));
         addMouseListener(mouseInputs);
         addMouseMotionListener(mouseInputs);
+
         handler = new Handler();
-        gameState = titleState;
+        int gameState = 0;
+        int titleState = 0;
+        int playState = 1;
     }
 
     public void paintComponent(Graphics g) {
@@ -54,9 +58,10 @@ public class GamePanel extends JPanel {
         Graphics2D g2 = (Graphics2D)g;
 //        g.drawImage(this.img.getSubimage(0,0,16,16), 0, 0, 100, 100,  null);
         // TITLE SCREEN
-        if (gameState == titleState) {
+        if (gameState == titleState | gameState == settingsState) {
             ui.draw(g2);
-        } else {
+        }
+        else if (gameState == playState) {
             //UI
             ui.draw(g2);
             handler.addEntity(player);

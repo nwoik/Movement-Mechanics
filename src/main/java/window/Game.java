@@ -43,7 +43,7 @@ public class Game implements Runnable{
     }
 
     public void importImg() {
-        InputStream inputStream = getClass().getResourceAsStream("/Woodgrain.png");
+        InputStream inputStream = getClass().getResourceAsStream("/Background.png");
         try {
             assert inputStream != null;
             img = ImageIO.read(inputStream);
