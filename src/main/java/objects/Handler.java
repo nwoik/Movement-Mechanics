@@ -1,5 +1,8 @@
 package objects;
 
+import window.Game;
+import window.GamePanel;
+
 import java.awt.*;
 import java.util.LinkedList;
 
