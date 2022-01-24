@@ -65,9 +65,9 @@ public class UI {
         g2.drawString("Exit", getXForCenteredText("Exit"), gp.tileSize*5+20F);
 
         switch (commandNum) {
-            case 0 -> g2.drawString("1", getXForCenteredText("New Game")-gp.tileSize, gp.tileSize*3);
-            case 1 -> g2.drawString("1", getXForCenteredText("Settings")-gp.tileSize, gp.tileSize*4+10F);
-            case 2 -> g2.drawString("1", getXForCenteredText("Exit")-gp.tileSize, gp.tileSize*5+20F);
+            case 0 -> g2.drawString(">", getXForCenteredText("New Game")-gp.tileSize, gp.tileSize*3);
+            case 1 -> g2.drawString(">", getXForCenteredText("Settings")-gp.tileSize, gp.tileSize*4+10F);
+            case 2 -> g2.drawString(">", getXForCenteredText("Exit")-gp.tileSize, gp.tileSize*5+20F);
         }
     }
 
@@ -93,15 +93,15 @@ public class UI {
         g2.drawString("Inventory", getXForCenteredText("Inventory"), gp.tileSize+32*11F);
         g2.drawString("Menu", getXForCenteredText("Menu"), gp.tileSize+32*12F);
         switch (commandNum) {
-            case 0 -> g2.drawString("1", getXForCenteredText("Audio")-gp.tileSize, gp.tileSize+32*2F);
-            case 1 -> g2.drawString("1", getXForCenteredText("Up")-gp.tileSize, gp.tileSize+32*5F);
-            case 2 -> g2.drawString("1", getXForCenteredText("Down")-gp.tileSize, gp.tileSize+32*6F);
-            case 3 -> g2.drawString("1", getXForCenteredText("Left")-gp.tileSize, gp.tileSize+32*7F);
-            case 4 -> g2.drawString("1", getXForCenteredText("Right")-gp.tileSize, gp.tileSize+32*8F);
-            case 5 -> g2.drawString("1", getXForCenteredText("Weapon 1")-gp.tileSize, gp.tileSize+32*9F);
-            case 6 -> g2.drawString("1", getXForCenteredText("Weapon 2")-gp.tileSize, gp.tileSize+32*10F);
-            case 7 -> g2.drawString("1", getXForCenteredText("Inventory")-gp.tileSize, gp.tileSize+32*11F);
-            case 8 -> g2.drawString("1", getXForCenteredText("Menu")-gp.tileSize, gp.tileSize+32*12F);
+            case 0 -> g2.drawString(">", getXForCenteredText("Audio")-gp.tileSize, gp.tileSize+32*2F);
+            case 1 -> g2.drawString(">", getXForCenteredText("Up")-gp.tileSize, gp.tileSize+32*5F);
+            case 2 -> g2.drawString(">", getXForCenteredText("Down")-gp.tileSize, gp.tileSize+32*6F);
+            case 3 -> g2.drawString(">", getXForCenteredText("Left")-gp.tileSize, gp.tileSize+32*7F);
+            case 4 -> g2.drawString(">", getXForCenteredText("Right")-gp.tileSize, gp.tileSize+32*8F);
+            case 5 -> g2.drawString(">", getXForCenteredText("Weapon 1")-gp.tileSize, gp.tileSize+32*9F);
+            case 6 -> g2.drawString(">", getXForCenteredText("Weapon 2")-gp.tileSize, gp.tileSize+32*10F);
+            case 7 -> g2.drawString(">", getXForCenteredText("Inventory")-gp.tileSize, gp.tileSize+32*11F);
+            case 8 -> g2.drawString(">", getXForCenteredText("Menu")-gp.tileSize, gp.tileSize+32*12F);
         }
     }
 
