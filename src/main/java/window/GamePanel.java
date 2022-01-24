@@ -53,8 +53,9 @@ public class GamePanel extends JPanel {
         int playState = 1;
     }
 
-    public void paintComponent(Graphics2D g2) {
-        super.paintComponent(g2);
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D)g;
         // TITLE SCREEN
         if (gameState == titleState | gameState == settingsState) {
             ui.draw(g2);
