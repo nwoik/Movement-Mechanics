@@ -9,9 +9,9 @@ import java.util.LinkedList;
 public class Handler {
     LinkedList<Entity> entities = new LinkedList<Entity>();
 
-    public void render(Graphics g) {
+    public void render(Graphics2D g2) {
         for (Entity entity : entities) {
-            entity.render(g);
+            entity.render(g2);
         }
     }
 

@@ -53,10 +53,8 @@ public class GamePanel extends JPanel {
         int playState = 1;
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
-//        g.drawImage(this.img.getSubimage(0,0,16,16), 0, 0, 100, 100,  null);
+    public void paintComponent(Graphics2D g2) {
+        super.paintComponent(g2);
         // TITLE SCREEN
         if (gameState == titleState | gameState == settingsState) {
             ui.draw(g2);
@@ -65,12 +63,12 @@ public class GamePanel extends JPanel {
             //UI
             ui.draw(g2);
             handler.addEntity(player);
-            handler.render(g);
+            handler.render(g2);
             handler.borderPatrol();
             handler.move();
 
-            g.setColor(Color.GREEN);
-            g.drawString(callFPS(), 10, 10);
+            g2.setColor(Color.GREEN);
+            g2.drawString(callFPS(),  10, 10);
         }
     }
 

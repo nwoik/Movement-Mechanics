@@ -4,11 +4,11 @@ import inputs.KeyboardInputs;
 import inputs.MouseInputs;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class UI {
-
     GamePanel gp;
     Graphics2D g2;
     Font gameFont;
