@@ -27,7 +27,7 @@ public abstract class Entity {
         this.movementSpeed = movementSpeed;
     }
 
-    public abstract void render(Graphics g);
+    public abstract void render(Graphics2D g2);
 //    public abstract Rectangle getBounds();
     public abstract void move();
 

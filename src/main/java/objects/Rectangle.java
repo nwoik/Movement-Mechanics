@@ -16,9 +16,9 @@ public class Rectangle extends Entity {
     }
 
     @Override
-    public void render(Graphics g) {
-        g.setColor(Color.GREEN);
-        g.fillRect(this.x, this.y, this.width, this.height);
+    public void render(Graphics2D g2) {
+        g2.setColor(Color.GREEN);
+        g2.fillRect(this.x, this.y, this.width, this.height);
     }
 
     @Override
